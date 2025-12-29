@@ -1,20 +1,20 @@
 class Flowrs < Formula
   desc "Flowrs is a Terminal User Interface (TUI) for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  version "0.7.6"
+  version "0.7.7"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/jvanbuel/flowrs/releases/download/v0.7.6/flowrs-tui-aarch64-apple-darwin.tar.xz"
-      sha256 "68789e8516f9ba44f6dd41e6b22df348d1170f701019d7e7cb80a01109efd697"
+      url "https://github.com/jvanbuel/flowrs/releases/download/v0.7.7/flowrs-tui-aarch64-apple-darwin.tar.xz"
+      sha256 "2827ff6c87b177fd2a8c99a279ded664ae91f6aa2d9e9ee3c80a83cb5c8f6acd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jvanbuel/flowrs/releases/download/v0.7.6/flowrs-tui-x86_64-apple-darwin.tar.xz"
-      sha256 "0efb4d2185ab45b905d67ec3cb4c50edfafdb294814b3888d174ccfa6b2345b2"
+      url "https://github.com/jvanbuel/flowrs/releases/download/v0.7.7/flowrs-tui-x86_64-apple-darwin.tar.xz"
+      sha256 "a2fc7c117e4f7d7658975bc89255deda40cb80e304366cfe9f13db50f5024eed"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jvanbuel/flowrs/releases/download/v0.7.6/flowrs-tui-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "fad5e4c2bb0d0af75c5522eb3d5e23e16f1694d1ab42bee03c3cd3e8ec4a1127"
+    url "https://github.com/jvanbuel/flowrs/releases/download/v0.7.7/flowrs-tui-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "62256bf315e8d45a34f6c099c2a5b22eb5900994d66224b873e0c10cc878beb7"
   end
   license "MIT"
 
