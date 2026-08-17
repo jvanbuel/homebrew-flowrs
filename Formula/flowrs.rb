@@ -1,20 +1,20 @@
 class Flowrs < Formula
   desc "Flowrs is a Terminal User Interface (TUI) for Apache Airflow"
   homepage "https://github.com/jvanbuel/flowrs"
-  version "0.13.4"
+  version "0.13.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/jvanbuel/flowrs/releases/download/flowrs-tui-v0.13.4/flowrs-tui-aarch64-apple-darwin.tar.xz"
-      sha256 "b464d439b826915d5a0bb0501567ad671d5c224d89649a4f0251a43f97a1deb2"
+      url "https://github.com/jvanbuel/flowrs/releases/download/flowrs-tui-v0.13.5/flowrs-tui-aarch64-apple-darwin.tar.xz"
+      sha256 "cbb746c4b4cf3348190bde83ffdeaed7388938e77f50b096d5aa6140175da888"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jvanbuel/flowrs/releases/download/flowrs-tui-v0.13.4/flowrs-tui-x86_64-apple-darwin.tar.xz"
-      sha256 "a2ed332b668d83c366e4d5df44fdc457cce297706a132558bd1211265376c4b9"
+      url "https://github.com/jvanbuel/flowrs/releases/download/flowrs-tui-v0.13.5/flowrs-tui-x86_64-apple-darwin.tar.xz"
+      sha256 "daebe312469197d5c607a9a2cb06fad4ca416b9f727e2d7ef266cfe7e9f4d32e"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jvanbuel/flowrs/releases/download/flowrs-tui-v0.13.4/flowrs-tui-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "2e1f5049c730ba0433e256e0239f9fe27beef516a16bcfb1c60dfde2740e5199"
+    url "https://github.com/jvanbuel/flowrs/releases/download/flowrs-tui-v0.13.5/flowrs-tui-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "594e6b56992c65f61e1cb965107d5e9072dc11c38e06aae7c3d83d0caaf94566"
   end
   license "MIT"
 
@@ -40,9 +40,15 @@ class Flowrs < Formula
   end
 
   def install
-    bin.install "flowrs" if OS.mac? && Hardware::CPU.arm?
-    bin.install "flowrs" if OS.mac? && Hardware::CPU.intel?
-    bin.install "flowrs" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "flowrs"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "flowrs"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "flowrs"
+    end
 
     install_binary_aliases!
 
